@@ -91,6 +91,7 @@ const HomeContainer = ({
 
         {/* ARTICLES */}
         {infosArticles.offers.map((info, index) => {
+          console.log(info)
           return (
             <div className="card-article" id={info._id} key={info._id}>
               <div className="owner">
@@ -109,6 +110,7 @@ const HomeContainer = ({
                 <div className="product-picture-infos">
                   <img src={info.product_image.secure_url} alt="" />
                   <div className="product_size-brand-price">
+                    <span>{info.product_name && info.product_name.length > 10 ? info.product_name.slice(0, 50) + "..." : info.product_name}</span>
                     <span>{info.product_price ? info.product_price : 0} €</span>
                     <span>{info.product_details[1].TAILLE}</span>
                     <span>
